@@ -1,0 +1,208 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-dm-sans: var(--font-dm-sans);
+  --font-poppins: var(--font-poppins);
+
+  /* primary */
+  --color-primary-500: #131ca2;
+  --color-primary-400: #0a12c9;
+  --color-primary-300: #111aff;
+  --color-primary-200: #d6e4ff;
+  --color-primary-100: #e8f1ff;
+  --color-primary-50: #f5f8fd;
+
+  /* secondary */
+  --color-secondary-500: #00bdff;
+  --color-secondary-400: #2dcdff;
+  --color-secondary-300: #b6eaff;
+  --color-secondary-200: #def4ff;
+  --color-secondary-100: #effaff;
+  --color-secondary-50: #f4fcff;
+
+  /* neutral */
+  --color-neutral-500: #0e1118;
+  --color-neutral-400: #2c3045;
+  --color-neutral-450: #bbbfc8;
+  --color-neutral-300: #364056;
+  --color-neutral-200: #3d4a66;
+  --color-neutral-100: #4c5b7d;
+  --color-neutral-50: #617397;
+  --color-neutral-dark-500: #9c9ea5;
+
+  /* background */
+  --color-background-400: #e9ebf1;
+  --color-background-300: #f4f5f8;
+  --color-background-200: #f9fafb;
+  --color-background-100: #fcfdfd;
+  --color-background-50: #ffffff;
+  --color-background-dark-100: #333a68;
+  --color-background-dark-200: #1b1f3f;
+  --color-background-dark-300: #101329;
+  --color-background-dark-400: #131521;
+  --color-background-dark-500: #0e101a;
+
+  /* components */
+  --color-brand: #182150;
+  --color-brand-200: #b2c8f1;
+  --color-black-10: #f8f8fa;
+  --color-black-50: #f1f1f5;
+  --color-black-100: #e2e4ec;
+  --color-black-200: #9ea2b8;
+  --color-black-300: #5d627c;
+  --color-black-400: #2c3045;
+  --color-black-500: #1a1f38;
+  --color-black-900: #000000;
+  --color-brand-blue-400: #2f38cf;
+  --color-brand-blue-500: #e4e5f9;
+  --color-secondary-blue-50: #f1fbff;
+  --color-secondary-blue-300: #64d6ff;
+  --color-green-success-500: #059669;
+  --color-gradient-end: #11111c;
+
+  /* semantics */
+  --color-yellow-900: #ffc100;
+  --color-yellow-800: #ffd140;
+  --color-yellow-700: #ffe080;
+  --color-yellow-600: #ffefbf;
+  --color-yellow-500: #fff7e1;
+  --color-yellow-400: #fffbef;
+
+  --color-green-900: #20b18b;
+  --color-green-800: #34d399;
+  --color-green-700: #c1f0dd;
+  --color-green-600: #ebf9f3;
+  --color-green-500: #f5fcf9;
+  --color-green-400: #fafdfc;
+
+  --color-red-900: #e63e3e;
+  --color-red-800: #f87171;
+  --color-red-700: #fabbbb;
+  --color-red-600: #fce6e6;
+  --color-red-500: #fdf3f3;
+  --color-red-400: #fef9f9;
+
+  /* shadows */
+  --ribbon-shadow: 0 -8px 32px 0 rgba(0, 0, 0, 0.2);
+  --shadow-smoke: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+  --text-shadow-testimonial-content: 0 4px 4px rgba(0, 0, 0, 0.25);
+  --shadow-leaflet: 0 5px 20px rgba(0, 0, 0, 0.5);
+
+  /* gradients */
+  --testimonial-radial:
+    193.07% 141.42% at 100% 0%, rgba(14, 16, 26, 0.4) 0%,
+    rgba(14, 16, 26, 0) 40%;
+  --testimonial-gradient: 180deg, rgba(27, 31, 63, 0) 65%, #1b1f3f 90%;
+  --button-primary-gradient: 104deg, #00bdff 0%, #131ca2 95.88%;
+  --home-page-gradient: 180deg, rgba(14, 17, 24, 0) 0%, #0e1118 100%;
+  --button-animate-gradient:
+    45deg, rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0.35) 40%,
+    rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0) 80%;
+}
+
+@layer utilities {
+  .leading-trim {
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
+  }
+  .scorer .scorer-num {
+    font-weight: bold;
+    font-family: sans-serif;
+    position: absolute;
+    text-align: center;
+    z-index: 2;
+  }
+
+  .scorer-bottom {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-transform: rotateX(90deg);
+    transform: rotateX(90deg);
+  }
+  .scorer-bottom.flipped {
+    cursor: default;
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+  }
+  .scorer-bottom-bg.flipped {
+    opacity: 0.8;
+    background-color: black !important;
+  }
+  .scorer-bottom-bg {
+    opacity: 0;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+  }
+
+  .scorer-top {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+  }
+  .scorer-top.flipped {
+    cursor: default;
+    -webkit-transform: rotateX(90deg);
+    transform: rotateX(90deg);
+  }
+
+  .scorer-bg {
+    opacity: 0;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+  }
+
+  .animate-btn {
+    @apply relative overflow-hidden after:absolute after:h-[150%] after:w-[150%] after:animate-[buttonAnimation_4s_infinite_ease-out] after:bg-linear-(--button-animate-gradient) after:content-[''];
+  }
+}
+
+@layer components {
+  /* Leaflet popup styling */
+  .leaflet-popup-content-wrapper {
+    @apply !bg-background-dark-300 border-secondary-500 !min-h-full !min-w-[309px] !rounded-xl border !p-5 !pt-4;
+  }
+
+  .leaflet-popup-content {
+    @apply !m-0 !w-full;
+  }
+
+  .leaflet-popup-close-button {
+    @apply hidden;
+  }
+
+  .leaflet-popup-tip-container {
+    @apply top-[calc(100%+1px)];
+  }
+
+  .leaflet-popup-tip {
+    @apply !bg-background-dark-300 rounded-br-md;
+  }
+
+  .leaflet-popup {
+    @apply !bottom-11;
+  }
+
+  /* Remove attribution + zoom controls */
+  .leaflet-control-container {
+    @apply hidden;
+  }
+
+  /* Ensure map container is visible */
+  .leaflet-container {
+    @apply !bg-linear-to-b from-[#0D0F1A] to-[#171A35];
+  }
+
+  /* Fix out-of-view issue */
+  .leaflet-map-pane {
+    @apply !top-0 !left-0;
+  }
+}
+
+@keyframes buttonAnimation {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}

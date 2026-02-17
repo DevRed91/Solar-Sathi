@@ -1,0 +1,3 @@
+=============TEMPORARY FILE============
+
+# Zod or other schemas, etc.
